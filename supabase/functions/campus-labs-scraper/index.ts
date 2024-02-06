@@ -1,16 +1,16 @@
+import puppeteer from "puppeteer"
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
 
 Deno.serve(async (req) => {
-  console.log(Deno.env.get("AI_TOKEN"))
   const { url, prompts } = await req.json()
   const endpoint = "https://api.jigsawstack.com/v1/ai/scrape";
   const options = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "x-api-key": Deno.env.get("AI_TOKEN"),
+      "x-api-key": "sk_9717bc1ca31dd22d81dc47021ff2e45aeb8fc8ac5a4f97785aa4126bed3a8176b0552a6dc3de0e0cfeb16Ralx8SvvK0CiX9U",
     },
     body: JSON.stringify({
       url: url,
